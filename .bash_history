@@ -3,3 +3,12 @@ make
 pnpm
 ls
 exit
+fish
+ls
+fish
+pnpm
+exit
+pnpm
+ls
+make
+exit

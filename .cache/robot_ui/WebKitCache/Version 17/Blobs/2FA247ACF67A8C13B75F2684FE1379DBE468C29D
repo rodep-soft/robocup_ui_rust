@@ -1,0 +1,145 @@
+import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/src/App.tsx");import __vite__cjsImport0_react_jsxDevRuntime from "/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=14221744"; const jsxDEV = __vite__cjsImport0_react_jsxDevRuntime["jsxDEV"];
+import * as RefreshRuntime from "/@react-refresh";
+const inWebWorker = typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope;
+let prevRefreshReg;
+let prevRefreshSig;
+if (import.meta.hot && !inWebWorker) {
+  if (!window.$RefreshReg$) {
+    throw new Error(
+      "@vitejs/plugin-react can't detect preamble. Something is wrong."
+    );
+  }
+  prevRefreshReg = window.$RefreshReg$;
+  prevRefreshSig = window.$RefreshSig$;
+  window.$RefreshReg$ = RefreshRuntime.getRefreshReg("/root/src/App.tsx");
+  window.$RefreshSig$ = RefreshRuntime.createSignatureFunctionForTransform;
+}
+var _s = $RefreshSig$();
+import __vite__cjsImport3_react from "/node_modules/.vite/deps/react.js?v=14221744"; const useState = __vite__cjsImport3_react["useState"];
+import reactLogo from "/src/assets/react.svg?import";
+import { invoke } from "/node_modules/.vite/deps/@tauri-apps_api_core.js?v=d22906e9";
+import "/src/App.css";
+function App() {
+  _s();
+  const [greetMsg, setGreetMsg] = useState("");
+  const [name, setName] = useState("");
+  async function greet() {
+    setGreetMsg(await invoke("greet", { name }));
+  }
+  return /* @__PURE__ */ jsxDEV("main", { className: "container", children: [
+    /* @__PURE__ */ jsxDEV("h1", { children: "Welcome to Tauri + React" }, void 0, false, {
+      fileName: "/root/src/App.tsx",
+      lineNumber: 36,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV("div", { className: "row", children: [
+      /* @__PURE__ */ jsxDEV("a", { href: "https://vitejs.dev", target: "_blank", children: /* @__PURE__ */ jsxDEV("img", { src: "/vite.svg", className: "logo vite", alt: "Vite logo" }, void 0, false, {
+        fileName: "/root/src/App.tsx",
+        lineNumber: 40,
+        columnNumber: 11
+      }, this) }, void 0, false, {
+        fileName: "/root/src/App.tsx",
+        lineNumber: 39,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV("a", { href: "https://tauri.app", target: "_blank", children: /* @__PURE__ */ jsxDEV("img", { src: "/tauri.svg", className: "logo tauri", alt: "Tauri logo" }, void 0, false, {
+        fileName: "/root/src/App.tsx",
+        lineNumber: 43,
+        columnNumber: 11
+      }, this) }, void 0, false, {
+        fileName: "/root/src/App.tsx",
+        lineNumber: 42,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV("a", { href: "https://reactjs.org", target: "_blank", children: /* @__PURE__ */ jsxDEV("img", { src: reactLogo, className: "logo react", alt: "React logo" }, void 0, false, {
+        fileName: "/root/src/App.tsx",
+        lineNumber: 46,
+        columnNumber: 11
+      }, this) }, void 0, false, {
+        fileName: "/root/src/App.tsx",
+        lineNumber: 45,
+        columnNumber: 9
+      }, this)
+    ] }, void 0, true, {
+      fileName: "/root/src/App.tsx",
+      lineNumber: 38,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV("p", { children: "Click on the Tauri, Vite, and React logos to learn more." }, void 0, false, {
+      fileName: "/root/src/App.tsx",
+      lineNumber: 49,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV(
+      "form",
+      {
+        className: "row",
+        onSubmit: (e) => {
+          e.preventDefault();
+          greet();
+        },
+        children: [
+          /* @__PURE__ */ jsxDEV(
+            "input",
+            {
+              id: "greet-input",
+              onChange: (e) => setName(e.currentTarget.value),
+              placeholder: "Enter a name..."
+            },
+            void 0,
+            false,
+            {
+              fileName: "/root/src/App.tsx",
+              lineNumber: 58,
+              columnNumber: 9
+            },
+            this
+          ),
+          /* @__PURE__ */ jsxDEV("button", { type: "submit", children: "Greet" }, void 0, false, {
+            fileName: "/root/src/App.tsx",
+            lineNumber: 63,
+            columnNumber: 9
+          }, this)
+        ]
+      },
+      void 0,
+      true,
+      {
+        fileName: "/root/src/App.tsx",
+        lineNumber: 51,
+        columnNumber: 7
+      },
+      this
+    ),
+    /* @__PURE__ */ jsxDEV("p", { children: greetMsg }, void 0, false, {
+      fileName: "/root/src/App.tsx",
+      lineNumber: 65,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, true, {
+    fileName: "/root/src/App.tsx",
+    lineNumber: 35,
+    columnNumber: 5
+  }, this);
+}
+_s(App, "Pt9MZiZsDZMZIBP52RApKDwl5Bw=");
+_c = App;
+export default App;
+var _c;
+$RefreshReg$(_c, "App");
+if (import.meta.hot && !inWebWorker) {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+if (import.meta.hot && !inWebWorker) {
+  RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+    RefreshRuntime.registerExportsForReactRefresh("/root/src/App.tsx", currentExports);
+    import.meta.hot.accept((nextExports) => {
+      if (!nextExports) return;
+      const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate("/root/src/App.tsx", currentExports, nextExports);
+      if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+    });
+  });
+}
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJtYXBwaW5ncyI6IkFBZ0JNOzs7Ozs7Ozs7Ozs7Ozs7OztBQWhCTixTQUFTQSxnQkFBZ0I7QUFDekIsT0FBT0MsZUFBZTtBQUN0QixTQUFTQyxjQUFjO0FBQ3ZCLE9BQU87QUFFUCxTQUFTQyxNQUFNO0FBQUFDLEtBQUE7QUFDYixRQUFNLENBQUNDLFVBQVVDLFdBQVcsSUFBSU4sU0FBUyxFQUFFO0FBQzNDLFFBQU0sQ0FBQ08sTUFBTUMsT0FBTyxJQUFJUixTQUFTLEVBQUU7QUFFbkMsaUJBQWVTLFFBQVE7QUFFckJILGdCQUFZLE1BQU1KLE9BQU8sU0FBUyxFQUFFSyxLQUFLLENBQUMsQ0FBQztBQUFBLEVBQzdDO0FBRUEsU0FDRSx1QkFBQyxVQUFLLFdBQVUsYUFDZDtBQUFBLDJCQUFDLFFBQUcsd0NBQUo7QUFBQTtBQUFBO0FBQUE7QUFBQSxXQUE0QjtBQUFBLElBRTVCLHVCQUFDLFNBQUksV0FBVSxPQUNiO0FBQUEsNkJBQUMsT0FBRSxNQUFLLHNCQUFxQixRQUFPLFVBQ2xDLGlDQUFDLFNBQUksS0FBSSxhQUFZLFdBQVUsYUFBWSxLQUFJLGVBQS9DO0FBQUE7QUFBQTtBQUFBO0FBQUEsYUFBMEQsS0FENUQ7QUFBQTtBQUFBO0FBQUE7QUFBQSxhQUVBO0FBQUEsTUFDQSx1QkFBQyxPQUFFLE1BQUsscUJBQW9CLFFBQU8sVUFDakMsaUNBQUMsU0FBSSxLQUFJLGNBQWEsV0FBVSxjQUFhLEtBQUksZ0JBQWpEO0FBQUE7QUFBQTtBQUFBO0FBQUEsYUFBNkQsS0FEL0Q7QUFBQTtBQUFBO0FBQUE7QUFBQSxhQUVBO0FBQUEsTUFDQSx1QkFBQyxPQUFFLE1BQUssdUJBQXNCLFFBQU8sVUFDbkMsaUNBQUMsU0FBSSxLQUFLTixXQUFXLFdBQVUsY0FBYSxLQUFJLGdCQUFoRDtBQUFBO0FBQUE7QUFBQTtBQUFBLGFBQTRELEtBRDlEO0FBQUE7QUFBQTtBQUFBO0FBQUEsYUFFQTtBQUFBLFNBVEY7QUFBQTtBQUFBO0FBQUE7QUFBQSxXQVVBO0FBQUEsSUFDQSx1QkFBQyxPQUFFLHdFQUFIO0FBQUE7QUFBQTtBQUFBO0FBQUEsV0FBMkQ7QUFBQSxJQUUzRDtBQUFBLE1BQUM7QUFBQTtBQUFBLFFBQ0MsV0FBVTtBQUFBLFFBQ1YsVUFBVSxDQUFDUyxNQUFNO0FBQ2ZBLFlBQUVDLGVBQWU7QUFDakJGLGdCQUFNO0FBQUEsUUFDUjtBQUFBLFFBRUE7QUFBQTtBQUFBLFlBQUM7QUFBQTtBQUFBLGNBQ0MsSUFBRztBQUFBLGNBQ0gsVUFBVSxDQUFDQyxNQUFNRixRQUFRRSxFQUFFRSxjQUFjQyxLQUFLO0FBQUEsY0FDOUMsYUFBWTtBQUFBO0FBQUEsWUFIZDtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEsVUFHK0I7QUFBQSxVQUUvQix1QkFBQyxZQUFPLE1BQUssVUFBUyxxQkFBdEI7QUFBQTtBQUFBO0FBQUE7QUFBQSxpQkFBMkI7QUFBQTtBQUFBO0FBQUEsTUFaN0I7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBLElBYUE7QUFBQSxJQUNBLHVCQUFDLE9BQUdSLHNCQUFKO0FBQUE7QUFBQTtBQUFBO0FBQUEsV0FBYTtBQUFBLE9BOUJmO0FBQUE7QUFBQTtBQUFBO0FBQUEsU0ErQkE7QUFFSjtBQUFDRCxHQTNDUUQsS0FBRztBQUFBVyxLQUFIWDtBQTZDVCxlQUFlQTtBQUFJLElBQUFXO0FBQUFDLGFBQUFELElBQUEiLCJuYW1lcyI6WyJ1c2VTdGF0ZSIsInJlYWN0TG9nbyIsImludm9rZSIsIkFwcCIsIl9zIiwiZ3JlZXRNc2ciLCJzZXRHcmVldE1zZyIsIm5hbWUiLCJzZXROYW1lIiwiZ3JlZXQiLCJlIiwicHJldmVudERlZmF1bHQiLCJjdXJyZW50VGFyZ2V0IiwidmFsdWUiLCJfYyIsIiRSZWZyZXNoUmVnJCJdLCJpZ25vcmVMaXN0IjpbXSwic291cmNlcyI6WyJBcHAudHN4Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IHVzZVN0YXRlIH0gZnJvbSBcInJlYWN0XCI7XG5pbXBvcnQgcmVhY3RMb2dvIGZyb20gXCIuL2Fzc2V0cy9yZWFjdC5zdmdcIjtcbmltcG9ydCB7IGludm9rZSB9IGZyb20gXCJAdGF1cmktYXBwcy9hcGkvY29yZVwiO1xuaW1wb3J0IFwiLi9BcHAuY3NzXCI7XG5cbmZ1bmN0aW9uIEFwcCgpIHtcbiAgY29uc3QgW2dyZWV0TXNnLCBzZXRHcmVldE1zZ10gPSB1c2VTdGF0ZShcIlwiKTtcbiAgY29uc3QgW25hbWUsIHNldE5hbWVdID0gdXNlU3RhdGUoXCJcIik7XG5cbiAgYXN5bmMgZnVuY3Rpb24gZ3JlZXQoKSB7XG4gICAgLy8gTGVhcm4gbW9yZSBhYm91dCBUYXVyaSBjb21tYW5kcyBhdCBodHRwczovL3RhdXJpLmFwcC9kZXZlbG9wL2NhbGxpbmctcnVzdC9cbiAgICBzZXRHcmVldE1zZyhhd2FpdCBpbnZva2UoXCJncmVldFwiLCB7IG5hbWUgfSkpO1xuICB9XG5cbiAgcmV0dXJuIChcbiAgICA8bWFpbiBjbGFzc05hbWU9XCJjb250YWluZXJcIj5cbiAgICAgIDxoMT5XZWxjb21lIHRvIFRhdXJpICsgUmVhY3Q8L2gxPlxuXG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cInJvd1wiPlxuICAgICAgICA8YSBocmVmPVwiaHR0cHM6Ly92aXRlanMuZGV2XCIgdGFyZ2V0PVwiX2JsYW5rXCI+XG4gICAgICAgICAgPGltZyBzcmM9XCIvdml0ZS5zdmdcIiBjbGFzc05hbWU9XCJsb2dvIHZpdGVcIiBhbHQ9XCJWaXRlIGxvZ29cIiAvPlxuICAgICAgICA8L2E+XG4gICAgICAgIDxhIGhyZWY9XCJodHRwczovL3RhdXJpLmFwcFwiIHRhcmdldD1cIl9ibGFua1wiPlxuICAgICAgICAgIDxpbWcgc3JjPVwiL3RhdXJpLnN2Z1wiIGNsYXNzTmFtZT1cImxvZ28gdGF1cmlcIiBhbHQ9XCJUYXVyaSBsb2dvXCIgLz5cbiAgICAgICAgPC9hPlxuICAgICAgICA8YSBocmVmPVwiaHR0cHM6Ly9yZWFjdGpzLm9yZ1wiIHRhcmdldD1cIl9ibGFua1wiPlxuICAgICAgICAgIDxpbWcgc3JjPXtyZWFjdExvZ299IGNsYXNzTmFtZT1cImxvZ28gcmVhY3RcIiBhbHQ9XCJSZWFjdCBsb2dvXCIgLz5cbiAgICAgICAgPC9hPlxuICAgICAgPC9kaXY+XG4gICAgICA8cD5DbGljayBvbiB0aGUgVGF1cmksIFZpdGUsIGFuZCBSZWFjdCBsb2dvcyB0byBsZWFybiBtb3JlLjwvcD5cblxuICAgICAgPGZvcm1cbiAgICAgICAgY2xhc3NOYW1lPVwicm93XCJcbiAgICAgICAgb25TdWJtaXQ9eyhlKSA9PiB7XG4gICAgICAgICAgZS5wcmV2ZW50RGVmYXVsdCgpO1xuICAgICAgICAgIGdyZWV0KCk7XG4gICAgICAgIH19XG4gICAgICA+XG4gICAgICAgIDxpbnB1dFxuICAgICAgICAgIGlkPVwiZ3JlZXQtaW5wdXRcIlxuICAgICAgICAgIG9uQ2hhbmdlPXsoZSkgPT4gc2V0TmFtZShlLmN1cnJlbnRUYXJnZXQudmFsdWUpfVxuICAgICAgICAgIHBsYWNlaG9sZGVyPVwiRW50ZXIgYSBuYW1lLi4uXCJcbiAgICAgICAgLz5cbiAgICAgICAgPGJ1dHRvbiB0eXBlPVwic3VibWl0XCI+R3JlZXQ8L2J1dHRvbj5cbiAgICAgIDwvZm9ybT5cbiAgICAgIDxwPntncmVldE1zZ308L3A+XG4gICAgPC9tYWluPlxuICApO1xufVxuXG5leHBvcnQgZGVmYXVsdCBBcHA7XG4iXSwiZmlsZSI6Ii9yb290L3NyYy9BcHAudHN4In0=
