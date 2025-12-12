@@ -4,6 +4,12 @@ path = "/root/ros2_ws/install/rosidl_runtime_rs/share/rosidl_runtime_rs/rust"
 [patch.crates-io.test_msgs]
 path = "/root/ros2_ws/install/test_msgs/share/test_msgs/rust"
 
+[patch.crates-io.sensor_msgs]
+path = "/root/ros2_ws/install/sensor_msgs/share/sensor_msgs/rust"
+
+[patch.crates-io.geometry_msgs]
+path = "/root/ros2_ws/install/geometry_msgs/share/geometry_msgs/rust"
+
 [patch.crates-io.std_msgs]
 path = "/root/ros2_ws/install/std_msgs/share/std_msgs/rust"
 

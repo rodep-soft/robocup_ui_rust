@@ -1282,6 +1282,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "geometry_msgs"
+version = "5.3.6"
+dependencies = [
+ "builtin_interfaces",
+ "rosidl_runtime_rs",
+ "std_msgs",
+]
+
+[[package]]
 name = "getrandom"
 version = "0.1.16"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3110,7 +3119,9 @@ name = "robot_ui"
 version = "0.1.0"
 dependencies = [
  "anyhow",
+ "base64 0.22.1",
  "rclrs",
+ "sensor_msgs",
  "serde",
  "serde_json",
  "std_msgs",
@@ -3261,6 +3272,17 @@ checksum = "d767eb0aabc880b29956c35734170f26ed551a859dbd361d140cdbeca61ab1e2"
 dependencies = [
  "serde",
  "serde_core",
+]
+
+[[package]]
+name = "sensor_msgs"
+version = "5.3.6"
+dependencies = [
+ "builtin_interfaces",
+ "geometry_msgs",
+ "rosidl_runtime_rs",
+ "service_msgs",
+ "std_msgs",
 ]
 
 [[package]]
@@ -3421,6 +3443,14 @@ dependencies = [
  "proc-macro2",
  "quote",
  "syn 2.0.111",
+]
+
+[[package]]
+name = "service_msgs"
+version = "2.0.3"
+dependencies = [
+ "builtin_interfaces",
+ "rosidl_runtime_rs",
 ]
 
 [[package]]
@@ -5423,3 +5453,11 @@ dependencies = [
  "syn 2.0.111",
  "winnow 0.7.14",
 ]
+
+[[patch.unused]]
+name = "action_msgs"
+version = "2.0.3"
+
+[[patch.unused]]
+name = "unique_identifier_msgs"
+version = "2.5.0"

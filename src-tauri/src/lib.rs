@@ -6,6 +6,14 @@ struct ChatterMessage {
     data: String,
 }
 
+#[derive(Clone, serde::Serialize)]
+struct CompressedImageMessage {
+    format: String,
+    data_base64: String,
+    width: u32,
+    height: u32,
+}
+
 #[tauri::command]
 fn greet(name: &str) -> String {
     format!("Hello, {}! You've been greeted from Rust!", name)
@@ -39,23 +47,45 @@ fn run_ros2_subscriber(app_handle: tauri::AppHandle) -> anyhow::Result<()> {
     let mut executor = context.create_basic_executor();
     let node = executor.create_node("robot_ui_subscriber")?;
     
-    let worker = node.create_worker::<usize>(0);
-    let _subscription = worker.create_subscription::<std_msgs::msg::String, _>(
+    // Subscribe to /chatter
+    let worker1 = node.create_worker::<usize>(0);
+    let app_handle_chatter = app_handle.clone();
+    let _subscription_chatter = worker1.create_subscription::<std_msgs::msg::String, _>(
         "chatter",
         move |count: &mut usize, msg: std_msgs::msg::String| {
             *count += 1;
             println!("[{}] Received on /chatter: {}", *count, msg.data);
             
-            // Emit event to frontend
-            let _ = app_handle.emit("chatter-message", ChatterMessage {
+            let _ = app_handle_chatter.emit("chatter-message", ChatterMessage {
                 data: msg.data.clone(),
             });
         },
     )?;
     
-    println!("Subscribed to /chatter topic, waiting for messages...");
-    executor.spin(rclrs::SpinOptions::default());
+    // Subscribe to /image/compressed
+    let worker2 = node.create_worker::<usize>(0);
+    let _subscription_image = worker2.create_subscription::<sensor_msgs::msg::CompressedImage, _>(
+        "image/compressed",
+        move |count: &mut usize, msg: sensor_msgs::msg::CompressedImage| {
+            *count += 1;
+            println!("[{}] Received compressed image: {} bytes, format: {}", 
+                     *count, msg.data.len(), msg.format);
+            
+            // Convert image data to base64
+            use base64::{Engine as _, engine::general_purpose};
+            let data_base64 = general_purpose::STANDARD.encode(&msg.data);
+            
+            let _ = app_handle.emit("compressed-image", CompressedImageMessage {
+                format: msg.format.clone(),
+                data_base64,
+                width: 0,  // Not available in CompressedImage
+                height: 0,
+            });
+        },
+    )?;
     
+    println!("Subscribed to /chatter and /image/compressed topics...");
+    executor.spin(rclrs::SpinOptions::default());
     
     Ok(())
 }
