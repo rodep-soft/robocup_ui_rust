@@ -1,0 +1,44 @@
+# Build outputs
+node_modules
+dist
+dist-ssr
+target
+src-tauri/target
+
+# Caches
+.cache
+.ccache
+.cargo
+.rustup
+.local
+
+# Config and state
+.config
+.vscode
+.idea
+.git
+.bash_history
+.viminfo
+
+# Logs
+*.log
+logs
+
+# OS files
+.DS_Store
+*.sw?
+
+# Temporary files
+*.tmp
+*.temp
+
+# Keep these for the build
+!src-tauri/
+!src/
+!public/
+!package.json
+!pnpm-lock.yaml
+!tsconfig.json
+!tsconfig.node.json
+!vite.config.ts
+!index.html

@@ -48,11 +48,10 @@ WORKDIR /root/
 COPY ./ /root/
 
 # -------------------------
-# Build Tauri + rclrs
+# Build Tauri app
 # -------------------------
+WORKDIR /root
 ENV TAURI_SKIP_APPIMAGE=true
-
-
 ENV CI=true
 RUN pnpm install --frozen-lockfile && pnpm tauri build
 
@@ -100,6 +99,8 @@ RUN curl -fsSL https://get.pnpm.io/install.sh | env PNPM_VERSION=10.25.0 SHELL=b
     mv /root/.local/share/pnpm /usr/local/lib/pnpm && \
     ln -s /usr/local/lib/pnpm/.tools/pnpm-exe/10.25.0/pnpm /usr/local/bin/pnpm && \
     ln -s /usr/local/lib/pnpm/pnpx /usr/local/bin/pnpx
+
+
 
 # -------------------------
 # Copy built Tauri app
