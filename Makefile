@@ -1,0 +1,4 @@
+
+run:
+	pnpm tauri dev
+
