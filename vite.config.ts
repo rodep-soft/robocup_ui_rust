@@ -29,4 +29,7 @@ export default defineConfig(async () => ({
       ignored: ["**/src-tauri/**"],
     },
   },
+  
+  // Fix SVG MIME type issue
+  assetsInclude: ['**/*.svg'],
 }));

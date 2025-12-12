@@ -44,6 +44,21 @@ A Tauri desktop application with ROS2 integration for robot control and monitori
    ros2 run demo_nodes_py talker
    ```
 
+## Quick Test
+
+Use the provided test script to publish messages:
+
+```bash
+./test_publisher.sh
+```
+
+Or manually:
+
+```bash
+source ros2_ws/install/setup.bash
+ros2 topic pub /chatter std_msgs/msg/String "data: 'Hello World!'" --rate 1
+```
+
 ## Makefile Commands (convenience wrappers)
 
 - `make build-ros2` - Build the ROS2 workspace

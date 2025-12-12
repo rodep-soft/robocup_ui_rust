@@ -1,5 +1,4 @@
-use std::sync::{Arc, Mutex};
-use tauri::{Manager, Emitter};
+use tauri::Emitter;
 use rclrs::CreateBasicExecutor;
 
 #[derive(Clone, serde::Serialize)]
