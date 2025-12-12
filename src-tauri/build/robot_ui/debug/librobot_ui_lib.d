@@ -1,1 +1,0 @@
-/root/src-tauri/build/robot_ui/debug/librobot_ui_lib.rlib: /root/src-tauri/build/robot_ui/debug/build/robot_ui-9e579788a1e89d10/out/137ce811ee871fb3c31af8fbeadbdb6f751a0548e55e88a2c4b055ed0c322a2c /root/src-tauri/build.rs /root/src-tauri/capabilities /root/src-tauri/src/lib.rs /root/src-tauri/tauri.conf.json
